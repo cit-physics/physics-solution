@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เฉลยเคมี ปวช — ปรับพื้นฐาน</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sarabun', sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; background: #f0f4f0; color: #1a1a2e; }
+
+/* ── Top bar ── */
+.topbar {
+  background: linear-gradient(135deg, #1a5c2a 0%, #2e8b57 100%);
+  color: #fff; padding: 0 24px; height: 56px;
+  display: flex; align-items: center; gap: 14px;
+  flex-shrink: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.2); z-index: 100;
+}
+.topbar-icon { font-size: 1.5rem; }
+.topbar-title { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.02em; }
+.topbar-sub { font-size: 0.85rem; opacity: 0.75; margin-left: 6px; }
+.topbar-back {
+  margin-left: auto; background: rgba(255,255,255,0.15);
+  border: none; color: #fff; padding: 6px 14px; border-radius: 20px;
+  cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 0.85rem;
+  text-decoration: none; display: inline-block; transition: background 0.2s;
+}
+.topbar-back:hover { background: rgba(255,255,255,0.25); }
+.topbar-toggle {
+  background: rgba(255,255,255,0.15); border: none; color: #fff;
+  padding: 6px 14px; border-radius: 20px; cursor: pointer;
+  font-family: 'Sarabun', sans-serif; font-size: 0.85rem; transition: background 0.2s;
+}
+.topbar-toggle:hover { background: rgba(255,255,255,0.25); }
+
+/* ── Layout ── */
+.layout { display: flex; flex: 1; overflow: hidden; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 260px; min-width: 260px; background: #1a2e1a;
+  display: flex; flex-direction: column; overflow: hidden;
+  transition: width 0.3s, min-width 0.3s; flex-shrink: 0;
+}
+.sidebar.collapsed { width: 0; min-width: 0; }
+.sidebar-header {
+  padding: 16px 20px 10px; color: #7ec87e; font-size: 0.78rem;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0;
+}
+.nav-list { list-style: none; overflow-y: auto; flex: 1; padding-bottom: 16px; }
+.nav-list::-webkit-scrollbar { width: 4px; }
+.nav-list::-webkit-scrollbar-thumb { background: #2a4d2a; border-radius: 2px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 20px; cursor: pointer;
+  color: #aad4aa; font-size: 0.93rem;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap; overflow: hidden;
+}
+.nav-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.nav-item.active { background: rgba(126,200,126,0.12); border-left-color: #7ec87e; color: #7ec87e; font-weight: 700; }
+.nav-num {
+  background: rgba(255,255,255,0.1); color: #7ec87e;
+  width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700;
+}
+.nav-item.active .nav-num { background: #7ec87e; color: #1a2e1a; }
+.nav-label { overflow: hidden; text-overflow: ellipsis; }
+
+/* ── Content ── */
+.content { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+.iframe-wrap { flex: 1; overflow: hidden; }
+.iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* ── Splash ── */
+.splash {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 40px 24px; gap: 18px;
+}
+.splash-icon { font-size: 4rem; }
+.splash h2 { font-size: 1.6rem; color: #1a5c2a; }
+.splash p { color: #666; font-size: 1.0rem; max-width: 420px; line-height: 1.8; }
+.chapter-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; width: 100%; max-width: 720px; margin-top: 10px;
+}
+.chapter-btn {
+  background: #fff; border: 2px solid #c8e6c9; border-radius: 12px;
+  padding: 14px 16px; cursor: pointer; text-align: left;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  font-family: 'Sarabun', sans-serif;
+}
+.chapter-btn:hover { border-color: #2e8b57; box-shadow: 0 4px 16px rgba(46,139,87,0.18); transform: translateY(-2px); }
+.chapter-btn .num { font-size: 0.78rem; color: #2e8b57; font-weight: 700; margin-bottom: 4px; }
+.chapter-btn .name { font-size: 0.93rem; color: #1a1a2e; font-weight: 600; line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-icon">🧪</span>
+  <span class="topbar-title">เคมี ปวช</span>
+  <span class="topbar-sub">เฉลยแบบฝึกหัด</span>
+  <button class="topbar-toggle" onclick="toggleSidebar()">☰ บทเรียน</button>
+</div>
+
+<div class="layout">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">บทเรียน</div>
+    <ul class="nav-list" id="navList">
+      <li class="nav-item" onclick="loadChapter('ch01-elements-compounds.html', this)">
+        <span class="nav-num">1</span>
+        <span class="nav-label">ธาตุและสารประกอบ</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch02-atomic-structure.html', this)">
+        <span class="nav-num">2</span>
+        <span class="nav-label">โครงสร้างอะตอม</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch03-chemical-bonding.html', this)">
+        <span class="nav-num">3</span>
+        <span class="nav-label">การตั้งชื่อสารประกอบ</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch04-stoichiometry-1.html', this)">
+        <span class="nav-num">4</span>
+        <span class="nav-label">มวลอะตอม & มวลโมเลกุล</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch05-stoichiometry-2.html', this)">
+        <span class="nav-num">5</span>
+        <span class="nav-label">โมล & ดุลสมการ</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content" id="content">
+    <div class="splash" id="splash">
+      <div class="splash-icon">🧪</div>
+      <h2>เฉลยเคมี ปวช</h2>
+      <p>เลือกบทเรียนจากเมนูซ้าย หรือกดที่บทด้านล่างได้เลยครับ</p>
+      <div class="chapter-grid">
+        <div class="chapter-btn" onclick="loadChapter('ch01-elements-compounds.html', null)">
+          <div class="num">บทที่ 1</div>
+          <div class="name">ธาตุและสารประกอบ</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch02-atomic-structure.html', null)">
+          <div class="num">บทที่ 2</div>
+          <div class="name">โครงสร้างอะตอม</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch03-chemical-bonding.html', null)">
+          <div class="num">บทที่ 3</div>
+          <div class="name">การตั้งชื่อสารประกอบ</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch04-stoichiometry-1.html', null)">
+          <div class="num">บทที่ 4</div>
+          <div class="name">มวลอะตอม & มวลโมเลกุล</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch05-stoichiometry-2.html', null)">
+          <div class="num">บทที่ 5</div>
+          <div class="name">โมล & ดุลสมการ</div>
+        </div>
+      </div>
+    </div>
+    <div class="iframe-wrap" id="iframeWrap" style="display:none;">
+      <iframe id="contentFrame" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+function loadChapter(file, item) {
+  document.getElementById('splash').style.display = 'none';
+  document.getElementById('iframeWrap').style.display = 'block';
+  document.getElementById('contentFrame').src = file;
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  if (item) item.classList.add('active');
+  else {
+    document.querySelectorAll('.nav-item').forEach(el => {
+      if (el.getAttribute('onclick') && el.getAttribute('onclick').includes(file)) el.classList.add('active');
+    });
+  }
+}
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+}
+</script>
+</body>
+</html>

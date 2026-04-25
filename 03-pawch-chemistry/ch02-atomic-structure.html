@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เฉลย บทที่ 2 โครงสร้างอะตอม</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sarabun', sans-serif; background: #f0f4f0; color: #1a1a2e; font-size: 15px; line-height: 1.7; padding: 24px 20px 48px; }
+
+.chapter-header {
+  background: linear-gradient(135deg, #1a5c2a 0%, #2e8b57 100%);
+  color: #fff; border-radius: 14px; padding: 22px 28px; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+}
+.chapter-header .icon { font-size: 2.2rem; }
+.chapter-header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+.chapter-header p { font-size: 0.9rem; opacity: 0.85; }
+
+.section-title {
+  font-size: 1.05rem; font-weight: 700; color: #1a5c2a;
+  border-left: 4px solid #2e8b57; padding-left: 12px;
+  margin: 28px 0 14px;
+}
+
+.q-block {
+  background: #fff; border-radius: 12px; padding: 18px 20px;
+  margin-bottom: 16px; border: 1px solid #d4e8d4;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.q-num {
+  display: inline-block; background: #1a5c2a; color: #fff;
+  width: 28px; height: 28px; border-radius: 50%;
+  text-align: center; line-height: 28px; font-size: 0.82rem;
+  font-weight: 700; margin-right: 8px; flex-shrink: 0;
+}
+.q-text { font-weight: 600; color: #2a4a2a; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 4px; }
+.answer-box {
+  background: #f0faf0; border: 1px solid #a8d5a8; border-radius: 8px;
+  padding: 14px 16px; margin-top: 8px;
+}
+.answer-label {
+  font-size: 0.78rem; font-weight: 700; color: #2e8b57;
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;
+}
+.answer-content { color: #1a3a1a; }
+
+.table-wrapper { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th { background: #1a5c2a; color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
+td { padding: 7px 12px; border-bottom: 1px solid #d4e8d4; text-align: center; }
+td:first-child { text-align: left; }
+tr:nth-child(even) td { background: #f5fbf5; }
+
+.fun-fact {
+  background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+  border: 1px solid #f9d835; border-radius: 8px;
+  padding: 10px 14px; margin-top: 12px; font-size: 0.88rem; color: #5a4a00;
+}
+.fun-fact .ff-icon { font-size: 1rem; margin-right: 6px; }
+
+.highlight { background: #e8f5e9; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+.formula { font-family: monospace; font-weight: 700; font-size: 1rem; color: #1a5c2a; }
+
+.model-card {
+  background: #fff; border: 1px solid #c8e6c9; border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 10px;
+}
+.model-card .model-name { font-weight: 700; color: #1a5c2a; font-size: 0.95rem; }
+.model-card .model-year { color: #888; font-size: 0.82rem; margin-left: 8px; }
+.model-card .model-desc { margin-top: 4px; font-size: 0.9rem; color: #333; }
+
+.config-row { font-family: monospace; font-size: 0.92rem; padding: 4px 0; border-bottom: 1px dashed #c8e6c9; }
+.config-row:last-child { border: none; }
+
+.mcq-block { margin-bottom: 10px; }
+.mcq-choice { padding: 4px 10px; border-radius: 6px; margin: 3px 0; font-size: 0.9rem; }
+.mcq-correct { background: #e8f5e9; border-left: 3px solid #2e8b57; font-weight: 600; color: #1a5c2a; }
+.mcq-wrong { color: #999; }
+
+.formula-box {
+  background: #e8f5e9; border: 1px solid #a5d6a7;
+  border-radius: 8px; padding: 10px 14px; margin: 10px 0;
+  font-size: 0.95rem;
+}
+</style>
+</head>
+<body>
+
+<div class="chapter-header">
+  <span class="icon">⚛️</span>
+  <div>
+    <h1>บทที่ 2 — โครงสร้างอะตอม</h1>
+    <p>Atomic Structures | เฉลยแบบฝึกหัดพร้อมคำอธิบาย</p>
+  </div>
+</div>
+
+<!-- ===== แบบจำลองอะตอม ===== -->
+<div class="section-title">ส่วนที่ 1 — แบบจำลองอะตอม</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สรุปแบบจำลองอะตอม (ต้องรู้!)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เนื้อหาสำคัญ</div>
+    <div class="model-card">
+      <span class="model-name">1. Democritus</span><span class="model-year">~400 ปีก่อน ค.ศ.</span>
+      <div class="model-desc">อะตอมเป็นอนุภาคที่เล็กที่สุด ตัดแบ่งไม่ได้อีก (ยังไม่มีทดลอง)</div>
+    </div>
+    <div class="model-card">
+      <span class="model-name">2. John Dalton</span><span class="model-year">ค.ศ. 1808</span>
+      <div class="model-desc">อะตอมเป็นทรงกลมแข็ง ธาตุชนิดเดียวกันมีอะตอมเหมือนกันทุกประการ รวมตัวกันเป็นสารประกอบ</div>
+    </div>
+    <div class="model-card">
+      <span class="model-name">3. J.J. Thomson</span><span class="model-year">ค.ศ. 1897</span>
+      <div class="model-desc">"แบบจำลองพุดดิ้งลูกเกด" — อะตอมเป็นทรงกลมประจุบวก มีอิเล็กตรอนประจุลบฝังอยู่ทั่ว</div>
+    </div>
+    <div class="model-card">
+      <span class="model-name">4. Ernest Rutherford</span><span class="model-year">ค.ศ. 1911</span>
+      <div class="model-desc">นิวเคลียสอยู่ตรงกลาง มีประจุบวก อิเล็กตรอนวนรอบนอก (จากการยิง α เข้า Gold foil)</div>
+    </div>
+    <div class="model-card">
+      <span class="model-name">5. Niels Bohr</span><span class="model-year">ค.ศ. 1913</span>
+      <div class="model-desc">อิเล็กตรอนวนในวงโคจรที่มีพลังงานคงที่ (ระดับพลังงาน n=1,2,3,...) เมื่อกระโดดระดับจะปล่อย/รับแสง</div>
+    </div>
+    <div class="model-card">
+      <span class="model-name">6. แบบจำลองกลศาสตร์ควอนตัม</span><span class="model-year">ค.ศ. 1920s</span>
+      <div class="model-desc">ไม่สามารถบอกตำแหน่งอิเล็กตรอนแน่ชัดได้ บอกได้แค่ความน่าจะเป็น (Orbital = บริเวณที่มีโอกาสพบ)</div>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">🎯</span> <strong>Rutherford เจ๋งมาก!</strong> เขายิงอนุภาค α ผ่านแผ่นทองคำบางๆ ส่วนใหญ่ผ่านได้ แต่บางส่วนกระดอนกลับ — เขาบอกว่า "เหมือนยิงกระสุนปืนใหญ่ใส่กระดาษแล้วกระดาษยิงกลับมา!" นั่นทำให้เขาค้นพบว่ามีนิวเคลียสอยู่!</div>
+</div>
+
+<!-- ===== ข้อ 1 อนุภาคมูลฐาน ===== -->
+<div class="section-title">ส่วนที่ 2 — อนุภาคมูลฐาน (P, n, e⁻)</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สูตรที่ต้องใช้</div>
+  <div class="formula-box">
+    <p>• <strong>เลขอะตอม (Z)</strong> = จำนวนโปรตอน (P) = จำนวนอิเล็กตรอน (e⁻) ในอะตอมกลาง</p>
+    <p>• <strong>เลขมวล (A)</strong> = โปรตอน (P) + นิวตรอน (n)</p>
+    <p>• <strong>นิวตรอน (n)</strong> = เลขมวล (A) − เลขอะตอม (Z)</p>
+    <p>• สัญลักษณ์นิวเคลียร์: $^A_Z X$</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">1</span>ระบุอนุภาคมูลฐาน</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>สัญลักษณ์</th><th>โปรตอน (P)</th><th>นิวตรอน (n)</th><th>อิเล็กตรอน (e⁻)</th></tr>
+        <tr><td>⁷Li₃</td><td>3</td><td>7−3 = <span class="highlight">4</span></td><td>3</td></tr>
+        <tr><td>¹⁴N₇</td><td>7</td><td>14−7 = <span class="highlight">7</span></td><td>7</td></tr>
+        <tr><td>⁵⁵Mn₂₇</td><td>27</td><td>55−27 = <span class="highlight">28</span></td><td>27</td></tr>
+        <tr><td>⁸⁰Br₃₅</td><td>35</td><td>80−35 = <span class="highlight">45</span></td><td>35</td></tr>
+        <tr><td>⁷⁵As₃₃</td><td>33</td><td>75−33 = <span class="highlight">42</span></td><td>33</td></tr>
+        <tr><td>²⁰⁷Pb₈₂</td><td>82</td><td>207−82 = <span class="highlight">125</span></td><td>82</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💡</span> <strong>จำง่ายๆ:</strong> เลขบน = มวล (A) = โปรตอน + นิวตรอน / เลขล่าง = เลขอะตอม (Z) = โปรตอน ดังนั้น นิวตรอน = เลขบน − เลขล่าง เสมอครับ!</div>
+</div>
+
+<!-- ===== ไอออน ===== -->
+<div class="section-title">ส่วนที่ 3 — ไอออน (Ion)</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>หลักการคำนวณไอออน</div>
+  <div class="formula-box">
+    <p>• <strong>ไอออนบวก (+)</strong>: อะตอมเสียอิเล็กตรอน → e⁻ = Z − ประจุ</p>
+    <p style="padding-left:16px;">เช่น Na⁺: Z=11, e⁻ = 11−1 = 10 / Al³⁺: Z=13, e⁻ = 13−3 = 10</p>
+    <p>• <strong>ไอออนลบ (−)</strong>: อะตอมรับอิเล็กตรอน → e⁻ = Z + |ประจุ|</p>
+    <p style="padding-left:16px;">เช่น Cl⁻: Z=17, e⁻ = 17+1 = 18 / O²⁻: Z=8, e⁻ = 8+2 = 10</p>
+    <p>• <strong>โปรตอนและนิวตรอนไม่เปลี่ยน</strong> เมื่อเกิดไอออน</p>
+  </div>
+</div>
+
+<!-- ===== ไอโซโทป ===== -->
+<div class="section-title">ส่วนที่ 4 — ไอโซโทป ไอโซโทน ไอโซบาร์</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>นิยามและวิธีแยกแยะ</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เนื้อหาสำคัญ</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ชื่อ</th><th>ที่เหมือนกัน</th><th>ที่ต่างกัน</th><th>ตัวอย่าง</th></tr>
+        <tr><td><strong>ไอโซโทป</strong> (Isotope)</td><td>เลขอะตอม (Z) / โปรตอน</td><td>เลขมวล / นิวตรอน</td><td>¹H, ²H (D), ³H (T)</td></tr>
+        <tr><td><strong>ไอโซโทน</strong> (Isotone)</td><td>จำนวนนิวตรอน</td><td>เลขอะตอม / เลขมวล</td><td>¹⁴C₆, ¹⁵N₇ (n=8)</td></tr>
+        <tr><td><strong>ไอโซบาร์</strong> (Isobar)</td><td>เลขมวล (A)</td><td>เลขอะตอม / นิวตรอน</td><td>⁴⁰Ca₂₀, ⁴⁰Ar₁₈</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">☢️</span> <strong>ไอโซโทปกัมมันตรังสี:</strong> ¹⁴C (Carbon-14) เป็นไอโซโทปของคาร์บอนธรรมดา ใช้หาอายุซากดึกดำบรรพ์ได้! เพราะสิ่งมีชีวิตจะหยุดรับ ¹⁴C เมื่อตาย แล้วมันก็ค่อยๆ สลายตัวในอัตราที่รู้ — นี่คือ "Carbon Dating" ครับ</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">5</span>จากธาตุที่กำหนดให้: ³²A₁₆, ²⁷B₁₃, ³⁰C₁₅, ²²D₁₁, ¹⁶E₈, ¹⁹F₉</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <p><strong>ก่อนตอบ — วิเคราะห์ธาตุแต่ละตัว:</strong></p>
+      <div class="table-wrapper">
+        <table>
+          <tr><th>ธาตุ</th><th>เลขมวล (A)</th><th>เลขอะตอม (Z)</th><th>นิวตรอน (n)</th></tr>
+          <tr><td>A</td><td>32</td><td>16</td><td>16</td></tr>
+          <tr><td>B</td><td>27</td><td>13</td><td>14</td></tr>
+          <tr><td>C</td><td>30</td><td>15</td><td>15</td></tr>
+          <tr><td>D</td><td>22</td><td>11</td><td>11</td></tr>
+          <tr><td>E</td><td>16</td><td>8</td><td>8</td></tr>
+          <tr><td>F</td><td>19</td><td>9</td><td>10</td></tr>
+        </table>
+      </div>
+      <br>
+      <p>• ธาตุใดเป็น<strong>ไอโซโทป</strong>กับ ¹⁹X²⁻₈?</p>
+      <p style="padding-left:16px;">X²⁻ มีเลขอะตอม = 8 → ต้องหาธาตุที่ Z=8 = <span class="highlight">ธาตุ E (¹⁶E₈)</span></p>
+      <p>• ธาตุใดเป็น<strong>ไอโซโทน</strong>กับ ³⁵Y₂₀?</p>
+      <p style="padding-left:16px;">Y มี n = 35−20 = 15 → หาธาตุที่ n=15 = <span class="highlight">ธาตุ C (n=15)</span></p>
+      <p>• ธาตุใดเป็น<strong>ไอโซบาร์</strong>กับ ²⁷Z²⁺₁₂?</p>
+      <p style="padding-left:16px;">Z²⁺ มีเลขมวล = 27 → หาธาตุที่ A=27 = <span class="highlight">ธาตุ B (A=27)</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ข้อ 6 คลื่น ===== -->
+<div class="section-title">ส่วนที่ 5 — คลื่นแม่เหล็กไฟฟ้า</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สมการคลื่น</div>
+  <div class="formula-box">
+    $$c = \lambda \nu$$
+    <p>• c = ความเร็วแสง = $3 \times 10^8$ m/s</p>
+    <p>• λ (lambda) = ความยาวคลื่น (m) ; 1 nm = $10^{-9}$ m</p>
+    <p>• ν (nu) = ความถี่ (Hz = s⁻¹)</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">6</span>จงคำนวณหาค่าความถี่ของคลื่นที่มีความยาว 500 นาโนเมตร</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <p><strong>กำหนด:</strong> λ = 500 nm = $500 \times 10^{-9}$ m = $5 \times 10^{-7}$ m</p>
+      <p><strong>แทนสูตร:</strong> $\nu = \dfrac{c}{\lambda} = \dfrac{3 \times 10^8}{5 \times 10^{-7}}$</p>
+      <p><strong>คำตอบ:</strong> <span class="highlight">$\nu = 6 \times 10^{14}$ Hz</span></p>
+      <p style="font-size:0.88rem;color:#555;margin-top:6px;">→ 500 nm อยู่ในช่วงแสงสีเขียว (visible light) ตามนั้นครับ!</p>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">🌈</span> <strong>สี vs ความยาวคลื่น:</strong> ม่วง 400nm → น้ำเงิน 450nm → เขียว 520nm → เหลือง 580nm → ส้ม 620nm → แดง 700nm — จำง่ายๆ ว่า "ม่วงสั้น แดงยาว" ใกล้เคียงกับความถี่วิทยุ = ยาวที่สุด, รังสีแกมมา = สั้นที่สุดครับ!</div>
+</div>
+
+<!-- ===== การจัดเรียงอิเล็กตรอน ===== -->
+<div class="section-title">ส่วนที่ 6 — การจัดเรียงอิเล็กตรอน</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>กฎการจัดเรียงอิเล็กตรอน</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เนื้อหาสำคัญ</div>
+    <div class="answer-content">
+      <p><strong>1. Aufbau Principle:</strong> บรรจุอิเล็กตรอนจากระดับพลังงานต่ำไปสูง</p>
+      <p style="font-size:0.88rem;padding-left:12px;">ลำดับ: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → ...</p>
+      <p><strong>2. Pauli Exclusion Principle:</strong> แต่ละ orbital มีอิเล็กตรอนได้ไม่เกิน 2 ตัว (spin ตรงข้าม)</p>
+      <p><strong>3. Hund's Rule:</strong> บรรจุอิเล็กตรอนเดี่ยวๆ ก่อนในแต่ละ orbital ของ subshell เดียวกัน</p>
+      <br>
+      <p><strong>จำนวน orbital แต่ละ subshell:</strong></p>
+      <p>s = 1 orbital (รับ 2e⁻) / p = 3 orbital (รับ 6e⁻) / d = 5 orbital (รับ 10e⁻) / f = 7 orbital (รับ 14e⁻)</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">10</span>จัดเรียงอิเล็กตรอนในระดับพลังงานย่อย</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ธาตุ</th><th>Z</th><th>การจัดเรียงอิเล็กตรอน</th></tr>
+        <tr><td>H</td><td>1</td><td class="formula">1s¹</td></tr>
+        <tr><td>He</td><td>2</td><td class="formula">1s²</td></tr>
+        <tr><td>Li</td><td>3</td><td class="formula">1s² 2s¹</td></tr>
+        <tr><td>Be</td><td>4</td><td class="formula">1s² 2s²</td></tr>
+        <tr><td>N</td><td>7</td><td class="formula">1s² 2s² 2p³</td></tr>
+        <tr><td>Na</td><td>11</td><td class="formula">1s² 2s² 2p⁶ 3s¹</td></tr>
+        <tr><td>Al</td><td>13</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p¹</td></tr>
+        <tr><td>P</td><td>15</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p³</td></tr>
+        <tr><td>Ar</td><td>18</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶</td></tr>
+        <tr><td>As</td><td>33</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p³</td></tr>
+        <tr><td>Se</td><td>34</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁴</td></tr>
+        <tr><td>In</td><td>49</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p¹</td></tr>
+        <tr><td>I</td><td>53</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁵</td></tr>
+        <tr><td>Xe</td><td>54</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶</td></tr>
+        <tr><td>Ba</td><td>56</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ 5s² 4d¹⁰ 5p⁶ 6s²</td></tr>
+        <tr><td>Pb</td><td>82</td><td class="formula">[Xe] 6s² 4f¹⁴ 5d¹⁰ 6p²</td></tr>
+        <tr><td>Fr</td><td>87</td><td class="formula">[Rn] 7s¹</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">🤔</span> <strong>ข้อยกเว้น:</strong> Cr (Z=24) คาดว่าจะเป็น [Ar] 4s² 3d⁴ แต่จริงๆ เป็น [Ar] 4s¹ 3d⁵ เพราะ d⁵ (ครึ่งเต็ม) เสถียรกว่า! และ Cu (Z=29) เป็น [Ar] 4s¹ 3d¹⁰ ไม่ใช่ 4s² 3d⁹ เพราะ d¹⁰ เต็มเสถียรกว่า — ธรรมชาติเลือกความเสถียรเสมอครับ</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">11</span>จัดเรียงอิเล็กตรอนธาตุกลุ่ม B (Transition metals)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ธาตุ</th><th>Z</th><th>การจัดเรียง</th></tr>
+        <tr><td>Sc</td><td>21</td><td class="formula">[Ar] 4s² 3d¹</td></tr>
+        <tr><td>Ti</td><td>22</td><td class="formula">[Ar] 4s² 3d²</td></tr>
+        <tr><td>V</td><td>23</td><td class="formula">[Ar] 4s² 3d³</td></tr>
+        <tr><td>Cr</td><td>24</td><td class="formula">[Ar] 4s¹ 3d⁵ ⚠️ (ยกเว้น)</td></tr>
+        <tr><td>Mn</td><td>25</td><td class="formula">[Ar] 4s² 3d⁵</td></tr>
+        <tr><td>Fe</td><td>26</td><td class="formula">[Ar] 4s² 3d⁶</td></tr>
+        <tr><td>Co</td><td>27</td><td class="formula">[Ar] 4s² 3d⁷</td></tr>
+        <tr><td>Cu</td><td>29</td><td class="formula">[Ar] 4s¹ 3d¹⁰ ⚠️ (ยกเว้น)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">12</span>จัดเรียงอิเล็กตรอนของไอออน</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ไอออน</th><th>Z</th><th>e⁻ จริง</th><th>การจัดเรียง</th></tr>
+        <tr><td>Na⁺</td><td>11</td><td>10</td><td class="formula">1s² 2s² 2p⁶</td></tr>
+        <tr><td>Al³⁺</td><td>13</td><td>10</td><td class="formula">1s² 2s² 2p⁶</td></tr>
+        <tr><td>Sn⁴⁺</td><td>50</td><td>46</td><td class="formula">[Kr] 4d¹⁰</td></tr>
+        <tr><td>Ca²⁺</td><td>20</td><td>18</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶</td></tr>
+        <tr><td>O²⁻</td><td>8</td><td>10</td><td class="formula">1s² 2s² 2p⁶</td></tr>
+        <tr><td>P³⁻</td><td>15</td><td>18</td><td class="formula">1s² 2s² 2p⁶ 3s² 3p⁶</td></tr>
+        <tr><td>Br⁻</td><td>35</td><td>36</td><td class="formula">[Ar] 4s² 3d¹⁰ 4p⁶</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💡</span> <strong>สังเกตไหม?</strong> Na⁺, Al³⁺, และ O²⁻ มีการจัดเรียงอิเล็กตรอนเหมือนกันคือ 1s² 2s² 2p⁶ = 10 อิเล็กตรอน เรียกว่า "ไอโซอิเล็กทรอนิก (Isoelectronic)" — ต่างประเภทกัน แต่แต่งตัวเหมือนกัน 😄</div>
+</div>
+
+<!-- ===== แบบฝึกหัดท้ายบท ===== -->
+<div class="section-title">แบบฝึกหัดท้ายบท — ข้อสอบปรนัย</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">1</span>เลขอะตอมของธาตุคือข้อใด</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย: ข้อ ข</div>
+    <div class="mcq-block">
+      <div class="mcq-choice mcq-wrong">ก. จำนวนอิเล็กตรอนในอะตอมของธาตุ</div>
+      <div class="mcq-choice mcq-correct">ข. จำนวนโปรตอนในอะตอมของธาตุ ✓</div>
+      <div class="mcq-choice mcq-wrong">ค. จำนวนโปรตอนกับนิวตรอนในอะตอมของธาตุ</div>
+      <div class="mcq-choice mcq-wrong">ง. จำนวนนิวตรอนในอะตอมของธาตุ</div>
+    </div>
+    <p style="font-size:0.88rem;color:#555;">* เลขอะตอม = โปรตอน (= อิเล็กตรอน ในอะตอมกลาง) ส่วน ค. คือเลขมวล</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">2</span>ธาตุ P มีเลขอะตอม 15 มีนิวตรอน 16 จะมีเลขมวล โปรตอน และอิเล็กตรอนเท่าไร</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <p>• เลขมวล = 15 + 16 = <span class="highlight">31</span></p>
+      <p>• โปรตอน = เลขอะตอม = <span class="highlight">15</span></p>
+      <p>• อิเล็กตรอน = <span class="highlight">15</span> (อะตอมกลาง)</p>
+      <p style="font-size:0.88rem;color:#555;margin-top:4px;">ตอบ: เลขมวล 31, โปรตอน 15, อิเล็กตรอน 15</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

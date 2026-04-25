@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เฉลย บทที่ 1 ธาตุและสารประกอบ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sarabun', sans-serif; background: #f0f4f0; color: #1a1a2e; font-size: 15px; line-height: 1.7; padding: 24px 20px 48px; }
+
+.chapter-header {
+  background: linear-gradient(135deg, #1a5c2a 0%, #2e8b57 100%);
+  color: #fff; border-radius: 14px; padding: 22px 28px; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+}
+.chapter-header .icon { font-size: 2.2rem; }
+.chapter-header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+.chapter-header p { font-size: 0.9rem; opacity: 0.85; }
+
+.section-title {
+  font-size: 1.05rem; font-weight: 700; color: #1a5c2a;
+  border-left: 4px solid #2e8b57; padding-left: 12px;
+  margin: 28px 0 14px;
+}
+
+.q-block {
+  background: #fff; border-radius: 12px; padding: 18px 20px;
+  margin-bottom: 16px; border: 1px solid #d4e8d4;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.q-num {
+  display: inline-block; background: #1a5c2a; color: #fff;
+  width: 28px; height: 28px; border-radius: 50%;
+  text-align: center; line-height: 28px; font-size: 0.82rem;
+  font-weight: 700; margin-right: 8px; flex-shrink: 0;
+}
+.q-text { font-weight: 600; color: #2a4a2a; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 4px; }
+.answer-box {
+  background: #f0faf0; border: 1px solid #a8d5a8; border-radius: 8px;
+  padding: 14px 16px; margin-top: 8px;
+}
+.answer-label {
+  font-size: 0.78rem; font-weight: 700; color: #2e8b57;
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;
+}
+.answer-content { color: #1a3a1a; }
+
+.table-wrapper { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th { background: #1a5c2a; color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
+td { padding: 7px 12px; border-bottom: 1px solid #d4e8d4; }
+tr:nth-child(even) td { background: #f5fbf5; }
+
+.fun-fact {
+  background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+  border: 1px solid #f9d835; border-radius: 8px;
+  padding: 10px 14px; margin-top: 12px; font-size: 0.88rem;
+  color: #5a4a00;
+}
+.fun-fact .ff-icon { font-size: 1rem; margin-right: 6px; }
+
+.tag { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; margin: 2px; }
+.tag-metal { background: #e3f2fd; color: #1565c0; }
+.tag-nonmetal { background: #fce4ec; color: #880e4f; }
+.tag-semimetal { background: #f3e5f5; color: #6a1b9a; }
+
+.formula { font-family: monospace; font-weight: 700; font-size: 1rem; color: #1a5c2a; }
+.highlight { background: #e8f5e9; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+
+.ans-list { list-style: none; padding: 0; }
+.ans-list li { padding: 4px 0; border-bottom: 1px dashed #c8e6c9; }
+.ans-list li:last-child { border: none; }
+.ans-list li::before { content: "✓ "; color: #2e8b57; font-weight: 700; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="chapter-header">
+  <span class="icon">🧪</span>
+  <div>
+    <h1>บทที่ 1 — ธาตุและสารประกอบ</h1>
+    <p>Elements and Compounds | เฉลยแบบฝึกหัดพร้อมคำอธิบาย</p>
+  </div>
+</div>
+
+<!-- ===== ข้อ 1 ===== -->
+<div class="section-title">ส่วนที่ 1 — ตารางธาตุ (Periodic Table)</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">1</span>แนวนอน/แนวตั้งของตารางธาตุ และชื่อกลุ่มธาตุ</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <p>• แนวนอนของตารางธาตุเรียก <span class="highlight">คาบ (Period)</span></p>
+      <p>• แนวตั้งของตารางธาตุเรียก <span class="highlight">หมู่ (Group)</span></p>
+      <br>
+      <div class="table-wrapper">
+        <table>
+          <tr><th>กลุ่มธาตุ</th><th>ชื่อที่เรียก</th></tr>
+          <tr><td>ธาตุกลุ่ม A</td><td>ธาตุหมู่หลัก (Representative / Main Group Elements)</td></tr>
+          <tr><td>ธาตุกลุ่ม B</td><td>ธาตุทรานซิชัน (Transition Elements)</td></tr>
+          <tr><td>ธาตุหมู่ IA</td><td>โลหะแอลคาไล (Alkali Metals)</td></tr>
+          <tr><td>ธาตุหมู่ IIA</td><td>โลหะแอลคาไลน์เอิร์ธ (Alkaline Earth Metals)</td></tr>
+          <tr><td>ธาตุหมู่ VIA</td><td>แชลโคเจน (Chalcogens)</td></tr>
+          <tr><td>ธาตุหมู่ VIIA</td><td>แฮโลเจน (Halogens)</td></tr>
+          <tr><td>ธาตุหมู่ VIIIA</td><td>แก๊สมีตระกูล / แก๊สเฉื่อย (Noble Gases / Inert Gases)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💡</span> <strong>รู้ไหม?</strong> ตารางธาตุถูกสร้างโดย <em>Dmitri Mendeleev</em> ในปี ค.ศ. 1869 เขาทำนายการมีอยู่ของธาตุที่ยังไม่ถูกค้นพบ แล้วก็ถูกต้องทุกข้อ! นักเคมีเรียกเขาว่า "นักพยากรณ์แห่งธาตุ" 🔮</div>
+</div>
+
+<!-- ===== ข้อ 2 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">2</span>ธาตุที่มีชื่อในภาษาไทย</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>สัญลักษณ์</th><th>ชื่อภาษาอังกฤษ</th><th>ชื่อภาษาไทย</th></tr>
+        <tr><td class="formula">Sb</td><td>Antimony</td><td>พลวง</td></tr>
+        <tr><td class="formula">Sn</td><td>Tin</td><td>ดีบุก</td></tr>
+        <tr><td class="formula">Pb</td><td>Lead</td><td>ตะกั่ว</td></tr>
+        <tr><td class="formula">As</td><td>Arsenic</td><td>สารหนู</td></tr>
+        <tr><td class="formula">S</td><td>Sulfur</td><td>กำมะถัน</td></tr>
+        <tr><td class="formula">Fe</td><td>Iron</td><td>เหล็ก</td></tr>
+        <tr><td class="formula">Cu</td><td>Copper</td><td>ทองแดง</td></tr>
+        <tr><td class="formula">Zn</td><td>Zinc</td><td>สังกะสี</td></tr>
+        <tr><td class="formula">Ag</td><td>Silver</td><td>เงิน</td></tr>
+        <tr><td class="formula">Au</td><td>Gold</td><td>ทอง</td></tr>
+        <tr><td class="formula">Hg</td><td>Mercury</td><td>ปรอท</td></tr>
+        <tr><td class="formula">Pt</td><td>Platinum</td><td>แพลทินัม (เงินขาว)</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">🤣</span> <strong>มุขเคมี:</strong> ทำไม Au ถึงแทนทอง? เพราะทองคำในภาษาละตินคือ <em>Aurum</em> — เหมือนคนที่ชื่อ "ออ" แต่ทุกคนเรียกว่า "ทอง" ตลอด!</div>
+</div>
+
+<!-- ===== ข้อ 3 ===== -->
+<div class="section-title">ส่วนที่ 2 — สมบัติโลหะ อโลหะ กึ่งโลหะ</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">3</span>คุณสมบัติของธาตุโลหะและอโลหะ</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>คุณสมบัติ</th><th>ธาตุโลหะ</th><th>ธาตุอโลหะ</th></tr>
+        <tr><td>จุดเดือดจุดหลอมเหลว</td><td>สูง (ส่วนใหญ่)</td><td>ต่ำ (ส่วนใหญ่)</td></tr>
+        <tr><td>การนำไฟฟ้าและนำความร้อน</td><td>นำได้ดีมาก</td><td>ไม่นำ (ยกเว้น C และ Si บ้าง)</td></tr>
+        <tr><td>สถานะที่อุณหภูมิห้อง</td><td>ของแข็ง (ยกเว้น Hg เป็นของเหลว)</td><td>ของแข็ง แก๊ส หรือของเหลว</td></tr>
+        <tr><td>ลักษณะเนื้อผิว</td><td>มันวาว (metallic luster)</td><td>ผิวด้าน ไม่มันวาว</td></tr>
+        <tr><td>ความเหนียวและความแข็งแรง</td><td>เหนียว ตีแผ่ได้ ดึงเป็นเส้นได้</td><td>เปราะ แตกง่าย</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💡</span> <strong>เกร็ดน่ารู้:</strong> ปรอท (Hg) เป็นโลหะชนิดเดียวที่เป็นของเหลวที่อุณหภูมิห้อง — จึงถูกใช้ในเทอร์โมมิเตอร์แบบดั้งเดิม แต่ปัจจุบันเลิกใช้แล้วเพราะเป็นพิษครับ ☠️</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">4</span>การนำไฟฟ้าเมื่ออุณหภูมิเปลี่ยน</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <p>• <strong>ธาตุโลหะ:</strong> ที่อุณหภูมิปกติ นำไฟฟ้า <span class="highlight">ได้ดี</span> → ถ้าอุณหภูมิสูงขึ้น นำไฟฟ้า <span class="highlight">ลดลง</span> (ต้านทานสูงขึ้น)</p>
+      <p>• <strong>ธาตุกึ่งโลหะ:</strong> ที่อุณหภูมิปกติ นำไฟฟ้า <span class="highlight">ได้เล็กน้อย</span> → ถ้าอุณหภูมิสูงขึ้น นำไฟฟ้า <span class="highlight">เพิ่มขึ้น</span> (จึงใช้เป็น Semiconductor)</p>
+      <p>• <strong>ธาตุอโลหะ:</strong> ที่อุณหภูมิปกติ <span class="highlight">ไม่นำไฟฟ้า</span> → ถ้าอุณหภูมิสูงขึ้น <span class="highlight">ยังคงไม่นำ</span> (ส่วนใหญ่)</p>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💡</span> <strong>ทำไม Semiconductor จึงสำคัญ?</strong> Silicon (Si) เป็นกึ่งโลหะ → เป็นหัวใจของชิปคอมพิวเตอร์ทุกเครื่องในโลก! ทุกครั้งที่คุณเล่นโทรศัพท์ คุณกำลังใช้สมบัติพิเศษของ Si อยู่ 📱</div>
+</div>
+
+<!-- ===== ข้อ 5 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">5</span>สัญลักษณ์และประเภทธาตุ (โลหะ / อโลหะ / กึ่งโลหะ)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ธาตุ</th><th>สัญลักษณ์</th><th>ประเภท</th></tr>
+        <tr><td>1. Calcium</td><td class="formula">Ca</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>2. Silicon</td><td class="formula">Si</td><td><span class="tag tag-semimetal">กึ่งโลหะ ✓</span></td></tr>
+        <tr><td>3. Carbon</td><td class="formula">C</td><td><span class="tag tag-nonmetal">อโลหะ ✓</span></td></tr>
+        <tr><td>4. Gallium</td><td class="formula">Ga</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>5. Rubidium</td><td class="formula">Rb</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>6. Tellurium</td><td class="formula">Te</td><td><span class="tag tag-semimetal">กึ่งโลหะ ✓</span></td></tr>
+        <tr><td>7. Chlorine</td><td class="formula">Cl</td><td><span class="tag tag-nonmetal">อโลหะ ✓</span></td></tr>
+        <tr><td>8. Hydrogen</td><td class="formula">H</td><td><span class="tag tag-nonmetal">อโลหะ ✓</span></td></tr>
+        <tr><td>9. Cadmium</td><td class="formula">Cd</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>10. Potassium</td><td class="formula">K</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>11. Gold</td><td class="formula">Au</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>12. Lead</td><td class="formula">Pb</td><td><span class="tag tag-metal">โลหะ ✓</span></td></tr>
+        <tr><td>13. Xenon</td><td class="formula">Xe</td><td><span class="tag tag-nonmetal">อโลหะ ✓ (แก๊สมีตระกูล)</span></td></tr>
+        <tr><td>14. Nitrogen</td><td class="formula">N</td><td><span class="tag tag-nonmetal">อโลหะ ✓</span></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ข้อ 6 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">6</span>จัดธาตุลงในตารางตามกลุ่ม (ไอโอดีน รูบิเดียม พลวง ปรอท ดีบุก ตะกั่ว บิสมัท ซีลีเนียม แทลเลียม ฟอสฟอรัส แคลเซียม อาร์กอน)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>#</th><th>กลุ่มธาตุ</th><th>สัญลักษณ์</th><th>ชื่อธาตุ (ภาษาอังกฤษ)</th></tr>
+        <tr><td>1</td><td>ธาตุกึ่งโลหะ</td><td class="formula">Sb, Te, Bi</td><td>Antimony, Tellurium, Bismuth*</td></tr>
+        <tr><td>2</td><td>ธาตุกลุ่มแฮโลเจน</td><td class="formula">I</td><td>Iodine</td></tr>
+        <tr><td>3</td><td>โลหะแทรนสิชัน</td><td class="formula">Hg</td><td>Mercury</td></tr>
+        <tr><td>4</td><td>โลหะแอลคาไลน์ (กลุ่ม IA)</td><td class="formula">Rb</td><td>Rubidium</td></tr>
+        <tr><td>5</td><td>โลหะแอลคาไลน์เอิร์ธ (กลุ่ม IIA)</td><td class="formula">Ca</td><td>Calcium</td></tr>
+        <tr><td>6</td><td>ธาตุกลุ่มแชลโคเจน</td><td class="formula">Se</td><td>Selenium</td></tr>
+        <tr><td>7</td><td>ธาตุกลุ่มแก๊สมีตระกูล</td><td class="formula">Ar</td><td>Argon</td></tr>
+      </table>
+    </div>
+    <p style="font-size:0.82rem;color:#666;margin-top:6px;">*Bi บางตำราจัดเป็นกึ่งโลหะ บางตำราจัดเป็นโลหะ ขึ้นกับหลักสูตร</p>
+  </div>
+</div>
+
+<!-- ===== ข้อ 7 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">7</span>จับคู่กลุ่มธาตุ (ใส่ตัวเลข 1-12)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ตัวเลข</th><th>ชุดธาตุ</th><th>ประเภทกลุ่ม</th></tr>
+        <tr><td><span class="highlight">11</span></td><td>Li, Cs, Fr</td><td>โลหะแอลคาไล</td></tr>
+        <tr><td><span class="highlight">5</span></td><td>I, F, Br</td><td>ธาตุแฮโลเจน</td></tr>
+        <tr><td><span class="highlight">1</span></td><td>Ga, Al, In</td><td>ธาตุหมู่ IIIA</td></tr>
+        <tr><td><span class="highlight">10</span></td><td>U, Pu, Cf</td><td>อนุกรมแลนทาไนด์–แอกทิไนด์</td></tr>
+        <tr><td><span class="highlight">6</span></td><td>Mg, Ca, Sr</td><td>โลหะแอลคาไลน์เอิร์ธ</td></tr>
+        <tr><td><span class="highlight">8</span></td><td>Kr, Ar, Rn</td><td>แก๊สมีตระกูล</td></tr>
+        <tr><td><span class="highlight">2</span></td><td>Fe, Ag, Hg</td><td>โลหะทรานซิชัน</td></tr>
+        <tr><td><span class="highlight">4</span></td><td>As, Sb, Bi</td><td>ธาตุหมู่ VA</td></tr>
+        <tr><td><span class="highlight">12</span></td><td>S, Se, Te</td><td>ธาตุแชลโคเจน</td></tr>
+        <tr><td><span class="highlight">7</span></td><td>C, Sn, Pb</td><td>ธาตุหมู่ IVA</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">☢️</span> <strong>เรื่องน่ากลัว:</strong> ชุดที่ 10 (U, Pu, Cf) คือแอกทิไนด์ — ล้วนเป็นธาตุกัมมันตรังสี Plutonium (Pu) ถูกใช้ในระเบิดนิวเคลียร์ แต่ก็ถูกใช้เป็นเชื้อเพลิงในยานอวกาศด้วย เช่น ยาน Voyager!</div>
+</div>
+
+<!-- ===== ข้อ 8 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">8</span>ระบุธาตุจากข้อมูลตาราง</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <p>• ธาตุ <strong>A</strong> (จุดหลอมเหลว −259.2°C, จุดเดือด −252.9°C, ไม่นำไฟฟ้า) = <span class="highlight">ไฮโดรเจน (H)</span></p>
+      <p style="font-size:0.88rem;color:#555;padding-left:12px;">→ เป็นแก๊สอโลหะ มีจุดเดือดต่ำมาก ไม่นำไฟฟ้า</p>
+      <p>• ธาตุ <strong>B</strong> (จุดหลอมเหลว −38.8°C, จุดเดือด 356.7°C, นำไฟฟ้า) = <span class="highlight">ปรอท (Hg)</span></p>
+      <p style="font-size:0.88rem;color:#555;padding-left:12px;">→ โลหะที่เป็นของเหลวที่อุณหภูมิห้อง จุดหลอมเหลวต่ำกว่า 0°C</p>
+      <p>• ธาตุ <strong>C</strong> (จุดหลอมเหลว 1538°C, นำไฟฟ้า) = <span class="highlight">เหล็ก (Fe)</span></p>
+      <p>• ธาตุ <strong>D</strong> (จุดหลอมเหลว 1414°C, นำไฟฟ้าเล็กน้อย) = <span class="highlight">ซิลิคอน (Si)</span></p>
+      <p>• ธาตุ <strong>E</strong> (จุดหลอมเหลว −7.2°C, จุดเดือด 58.8°C, ไม่นำไฟฟ้า) = <span class="highlight">โบรมีน (Br<sub>2</sub>)</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ข้อ 9 ===== -->
+<div class="section-title">ส่วนที่ 3 — อะตอมธาตุและโมเลกุลธาตุ</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">9</span>ยกตัวอย่างอะตอมธาตุและโมเลกุลธาตุ</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="two-col">
+      <div>
+        <p><strong>อะตอมธาตุ</strong> (มีอยู่เป็น 1 อะตอม):</p>
+        <ul style="padding-left:16px;margin-top:6px;">
+          <li>He, Ne, Ar, Kr, Xe, Rn (แก๊สมีตระกูล)</li>
+          <li>Fe, Cu, Na, Ca, Zn, Au</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>โมเลกุลธาตุ</strong> (มีหลายอะตอมรวมกัน):</p>
+        <ul style="padding-left:16px;margin-top:6px;">
+          <li>H<sub>2</sub>, O<sub>2</sub>, N<sub>2</sub>, F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub></li>
+          <li>O<sub>3</sub> (โอโซน), P<sub>4</sub>, S<sub>8</sub></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💡</span> <strong>เคล็ดลับจำ:</strong> โมเลกุลธาตุ 2 อะตอมที่ต้องจำ = <strong>"Have No Fear Of Ice Cold Beer"</strong> = H₂, N₂, F₂, O₂, I₂, Cl₂, Br₂ (7 ธาตุ)</div>
+</div>
+
+<!-- ===== ข้อ 12 ===== -->
+<div class="section-title">ส่วนที่ 4 — การจำแนกสาร</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">12</span>ความหมายของสารต่างๆ</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="answer-content">
+      <ul class="ans-list">
+        <li><strong>สารเนื้อเดียว (Homogeneous)</strong> — สารที่มีองค์ประกอบและสมบัติสม่ำเสมอทุกส่วน</li>
+        <li><strong>ธาตุ (Element)</strong> — สารบริสุทธิ์ที่ประกอบด้วยอะตอมชนิดเดียวกัน แยกย่อยทางเคมีไม่ได้อีก</li>
+        <li><strong>สารประกอบ (Compound)</strong> — สารบริสุทธิ์ที่ประกอบด้วยธาตุ ≥ 2 ชนิด รวมกันในสัดส่วนคงที่</li>
+        <li><strong>สารละลาย (Solution)</strong> — สารเนื้อเดียวที่มีตัวละลายละลายในตัวทำละลาย อนุภาค < 1 nm</li>
+        <li><strong>คอลลอยด์ (Colloid)</strong> — สารที่มีอนุภาคขนาด 1–1000 nm กระจายในสื่อกลาง ดูเป็นเนื้อเดียว</li>
+        <li><strong>สารแขวนลอย (Suspension)</strong> — ของผสมที่มีอนุภาค > 1000 nm ตกตะกอนได้เมื่อตั้งทิ้งไว้</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">🤣</span> <strong>มุขเคมี:</strong> นักเคมีถูกถามว่า "มีปัญหาไหม?" — ตอบว่า "ไม่ เราแค่มี <em>solution</em>" (solution = วิธีแก้ปัญหา / สารละลาย)</div>
+</div>
+
+<!-- ===== ข้อ 13 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">13</span>จำแนกสารว่าเป็น ธาตุ / สารประกอบ / สารละลาย</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>สาร</th><th>ธาตุ</th><th>สารประกอบ</th><th>สารละลาย</th></tr>
+        <tr><td>จุนสี (CuSO₄·5H₂O)</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>ก๊าซธรรมชาติอัด (CNG)</td><td></td><td></td><td>✓ (ผสม CH₄ + อื่นๆ)</td></tr>
+        <tr><td>น้ำแข็งแห้ง (CO₂ solid)</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>น้ำมันไร้สารตะกั่ว</td><td></td><td></td><td>✓</td></tr>
+        <tr><td>ก๊าซโอโซน (O₃)</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>แอมโมเนีย (NH₃)</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>โบรมีน (Br₂)</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>ก๊าซหุงต้ม (LPG)</td><td></td><td></td><td>✓ (ผสม C₃H₈ + C₄H₁₀)</td></tr>
+        <tr><td>โลหะเจือ (โลหะผสม)</td><td></td><td></td><td>✓ (สารละลายของแข็ง)</td></tr>
+        <tr><td>น้ำโซดา</td><td></td><td></td><td>✓</td></tr>
+        <tr><td>ก๊าซไฮโดรเจน (H₂)</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>น้ำกลั่น (H₂O)</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>น้ำแร่บริสุทธิ์ (H₂O)</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>เพชร (C)</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>ถ่าน (C)</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>น้ำตาล (C₁₂H₂₂O₁₁)</td><td></td><td>✓</td><td></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">💎</span> <strong>น่าทึ่ง:</strong> เพชรและถ่านดินสอ (graphite) เป็นธาตุเดียวกันทั้งคู่ = คาร์บอน (C) แต่โครงสร้างต่างกัน เพชรแข็งที่สุดในโลก ส่วนถ่านดินสอนุ่มจนเขียนได้ — C เดียวกัน ชีวิตต่างกันมาก!</div>
+</div>
+
+<!-- ===== ข้อ 14 ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">14</span>จำแนกสารเป็น สารละลาย / คอลลอยด์ / สารแขวนลอย</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>สาร</th><th>สารละลาย</th><th>คอลลอยด์</th><th>สารแขวนลอย</th></tr>
+        <tr><td>ชาเขียวอิชิตัน</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>สีทาบ้าน</td><td></td><td></td><td>✓</td></tr>
+        <tr><td>น้ำโคลน</td><td></td><td></td><td>✓</td></tr>
+        <tr><td>อากาศ</td><td>✓ (แก๊สผสม)</td><td></td><td></td></tr>
+        <tr><td>อากาศที่มีฝุ่นละออง</td><td></td><td></td><td>✓</td></tr>
+        <tr><td>น้ำนมถั่วเหลือง</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>ไอศครีมรสวนิลา</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>ไอศครีมรสชอคโกแลตชิพ</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>น้ำยาบ้วนปาก</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>น้ำจิ้มไก่</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>นมเปรี้ยว</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>ฝนกรด</td><td>✓ (กรดละลายน้ำ)</td><td></td><td></td></tr>
+        <tr><td>น้ำมันเบนซิน</td><td>✓</td><td></td><td></td></tr>
+        <tr><td>ยาสีฟัน</td><td></td><td>✓</td><td></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="fun-fact"><span class="ff-icon">🍦</span> <strong>ไอศครีม = คอลลอยด์!</strong> ไอศครีมเป็นโฟม (ฟองแก๊สในของเหลว) + อิมัลชัน (ไขมันในน้ำ) — เป็นคอลลอยด์ซ้อนคอลลอยด์ ทำให้นุ่มและอร่อย วิทยาศาสตร์อยู่ทุกคำของกินครับ! 🔬</div>
+</div>
+
+</body>
+</html>

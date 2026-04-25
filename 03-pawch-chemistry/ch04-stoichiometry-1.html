@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เฉลย บทที่ 3 มวลอะตอม มวลโมเลกุล</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sarabun', sans-serif; background: #f0f4f0; color: #1a1a2e; font-size: 15px; line-height: 1.7; padding: 24px 20px 48px; }
+
+.chapter-header {
+  background: linear-gradient(135deg, #1a5c2a 0%, #2e8b57 100%);
+  color: #fff; border-radius: 14px; padding: 22px 28px; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+}
+.chapter-header .icon { font-size: 2.2rem; }
+.chapter-header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+.chapter-header p { font-size: 0.9rem; opacity: 0.85; }
+
+.section-title {
+  font-size: 1.05rem; font-weight: 700; color: #1a5c2a;
+  border-left: 4px solid #2e8b57; padding-left: 12px;
+  margin: 28px 0 14px;
+}
+
+.q-block {
+  background: #fff; border-radius: 12px; padding: 18px 20px;
+  margin-bottom: 16px; border: 1px solid #d4e8d4;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.q-num {
+  display: inline-block; background: #1a5c2a; color: #fff;
+  width: 28px; height: 28px; border-radius: 50%;
+  text-align: center; line-height: 28px; font-size: 0.82rem;
+  font-weight: 700; margin-right: 8px;
+}
+.q-text { font-weight: 600; color: #2a4a2a; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 4px; }
+.answer-box {
+  background: #f0faf0; border: 1px solid #a8d5a8; border-radius: 8px;
+  padding: 14px 16px; margin-top: 8px;
+}
+.answer-label { font-size: 0.78rem; font-weight: 700; color: #2e8b57; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+
+.table-wrapper { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th { background: #1a5c2a; color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
+td { padding: 7px 12px; border-bottom: 1px solid #d4e8d4; }
+tr:nth-child(even) td { background: #f5fbf5; }
+
+.fun-fact {
+  background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+  border: 1px solid #f9d835; border-radius: 8px;
+  padding: 10px 14px; margin-top: 12px; font-size: 0.88rem; color: #5a4a00;
+}
+.highlight { background: #e8f5e9; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+.formula { font-family: monospace; font-weight: 700; font-size: 1rem; color: #1a5c2a; }
+
+.formula-box {
+  background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 12px 16px; margin: 10px 0;
+}
+.step { background: #fff; border-left: 3px solid #2e8b57; padding: 6px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; }
+</style>
+</head>
+<body>
+
+<div class="chapter-header">
+  <span class="icon">⚖️</span>
+  <div>
+    <h1>บทที่ 3 (ตอนที่ 1) — มวลอะตอม & มวลโมเลกุล</h1>
+    <p>Atomic Mass & Molecular Weight | เฉลยข้อ 1–19</p>
+  </div>
+</div>
+
+<!-- ===== สูตรสำคัญ ===== -->
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สูตรสำคัญที่ต้องใช้</div>
+  <div class="formula-box">
+    <p>• <strong>มวลของ N อะตอม (กรัม)</strong> $= N \times \dfrac{M_W}{6.022 \times 10^{23}}$</p>
+    <p>• <strong>มวลอะตอมเฉลี่ยจากไอโซโทป</strong> $= \sum \dfrac{\text{มวล} \times \%\text{ในธรรมชาติ}}{100}$</p>
+    <p>• <strong>มวลโมเลกุล (MW)</strong> = ผลรวมมวลอะตอมของธาตุทุกตัวในสูตร</p>
+    <p>• <strong>1 amu</strong> = $1.66 \times 10^{-24}$ กรัม</p>
+  </div>
+</div>
+
+<!-- ===== ข้อ 1 ===== -->
+<div class="section-title">ส่วนที่ 1 — มวลอะตอม (Atomic Mass)</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">1</span>หามวลอะตอมและมวลของธาตุ (จากตารางธาตุ)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="table-wrapper">
+      <table>
+        <tr><th>ธาตุ</th><th>มวลอะตอม (amu)</th><th>มวล 1 อะตอม (g)</th></tr>
+        <tr><td>H</td><td>1</td><td>$1 \times 1.66 \times 10^{-24} = 1.66 \times 10^{-24}$</td></tr>
+        <tr><td>C</td><td>12</td><td>$12 \times 1.66 \times 10^{-24} = 19.92 \times 10^{-24}$</td></tr>
+        <tr><td>N</td><td>14</td><td>$14 \times 1.66 \times 10^{-24} = 23.24 \times 10^{-24}$</td></tr>
+        <tr><td>O</td><td>16</td><td>$16 \times 1.66 \times 10^{-24} = 26.56 \times 10^{-24}$</td></tr>
+        <tr><td>Na</td><td>23</td><td>$23 \times 1.66 \times 10^{-24} = 38.18 \times 10^{-24}$</td></tr>
+        <tr><td>Fe</td><td>56</td><td>$56 \times 1.66 \times 10^{-24} = 92.96 \times 10^{-24}$</td></tr>
+        <tr><td>Cl</td><td>35.5</td><td>$35.5 \times 1.66 \times 10^{-24} = 58.93 \times 10^{-24}$</td></tr>
+        <tr><td>Ca</td><td>40</td><td>$40 \times 1.66 \times 10^{-24} = 66.40 \times 10^{-24}$</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">2</span>ธาตุ A มีมวลอะตอมเท่ากับ 31 ธาตุ A 5 อะตอมจะมีมวลกี่กรัม</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล 1 อะตอม = $31 \times 1.66 \times 10^{-24}$ g</div>
+    <div class="step">มวล 5 อะตอม = $5 \times 31 \times 1.66 \times 10^{-24}$</div>
+    <div class="step"><span class="highlight">= $2.573 \times 10^{-22}$ กรัม</span></div>
+  </div>
+  <div class="fun-fact">💡 <strong>มวลอะตอม 31?</strong> ธาตุที่มีมวลอะตอมประมาณ 31 amu คือ Phosphorus (P) — ซึ่งเป็นองค์ประกอบหลักของ DNA และกระดูก! ทุกเซลล์ในร่างกายของคุณมี P อยู่ด้วยครับ 🧬</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">3</span>จงหามวลของธาตุ Potassium 10 อะตอม (K = 39)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล 10 อะตอม = $10 \times 39 \times 1.66 \times 10^{-24}$</div>
+    <div class="step"><span class="highlight">= $6.474 \times 10^{-22}$ กรัม</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">4</span>ธาตุ B 3 อะตอม มีมวล $1.1952 \times 10^{-22}$ กรัม จงหามวลอะตอมของ B</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล 1 อะตอม = $\dfrac{1.1952 \times 10^{-22}}{3} = 3.984 \times 10^{-23}$ g</div>
+    <div class="step">มวลอะตอม = $\dfrac{3.984 \times 10^{-23}}{1.66 \times 10^{-24}} = 24$ amu</div>
+    <div class="step"><span class="highlight">ธาตุ B มีมวลอะตอม = 24 amu (คือ Magnesium, Mg)</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">6</span>ธาตุ Ca มีมวลอะตอม 40 ธาตุ X 1 อะตอมมีมวลเป็น 4 เท่าของมวล Ca 2 อะตอม จงหามวลอะตอม X</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล Ca 2 อะตอม = $2 \times 40 = 80$ amu</div>
+    <div class="step">มวล X 1 อะตอม = $4 \times 80 = 320$ amu</div>
+    <div class="step"><span class="highlight">มวลอะตอม X = 320 amu</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">7</span>ธาตุ Y 5 อะตอมมีมวลเป็น 20 เท่าของมวลของคาร์บอน 10 อะตอม (C=12) จงหามวลอะตอม Y</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล C 10 อะตอม = $10 \times 12 = 120$ amu</div>
+    <div class="step">มวล Y 5 อะตอม = $20 \times 120 = 2400$ amu</div>
+    <div class="step">มวลอะตอม Y = $\dfrac{2400}{5}$</div>
+    <div class="step"><span class="highlight">= 480 amu</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">8</span>ธาตุ X 2 อะตอมมีมวลเป็น 4 เท่าของ O 3 อะตอม (O=16) จงหามวลอะตอม X</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล O 3 อะตอม = $3 \times 16 = 48$ amu</div>
+    <div class="step">มวล X 2 อะตอม = $4 \times 48 = 192$ amu</div>
+    <div class="step">มวลอะตอม X = $\dfrac{192}{2}$</div>
+    <div class="step"><span class="highlight">= 96 amu (คือ Molybdenum, Mo)</span></div>
+  </div>
+</div>
+
+<!-- ===== มวลอะตอมเฉลี่ยจากไอโซโทป ===== -->
+<div class="section-title">ส่วนที่ 2 — มวลอะตอมเฉลี่ยจากไอโซโทป</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สูตรมวลอะตอมเฉลี่ย</div>
+  <div class="formula-box">
+    $$\bar{M} = \frac{\sum(M_i \times \%_i)}{100}$$
+    <p>• $M_i$ = มวลอะตอมของไอโซโทปที่ i</p>
+    <p>• $\%_i$ = ปริมาณร้อยละของไอโซโทปที่ i ในธรรมชาติ</p>
+    <p>• ผลรวม % ทุกไอโซโทป = 100%</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">9</span>ธาตุ Li มี 2 ไอโซโทป มวลอะตอม 6 และ 7 มีปริมาณ 5% และ 95% จงหามวลอะตอมเฉลี่ยของ Li</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">$\bar{M} = \dfrac{(6 \times 5) + (7 \times 95)}{100}$</div>
+    <div class="step">$= \dfrac{30 + 665}{100} = \dfrac{695}{100}$</div>
+    <div class="step"><span class="highlight">= 6.95 amu</span></div>
+    <p style="font-size:0.88rem;color:#555;margin-top:6px;">✓ ตรงกับค่าในตารางธาตุ Li = 6.941</p>
+  </div>
+  <div class="fun-fact">🔋 <strong>ลิเธียมอยู่ในแบตเตอรี่โทรศัพท์คุณ!</strong> Li-ion battery ใช้ไอโซโทป ⁷Li เพราะเป็นไอโซโทปที่เสถียรที่สุด คิดดูว่าในโทรศัพท์มือถือทุกเครื่องมี Li อยู่ — โลกใช้ลิเธียมหลายพันล้านกรัมต่อปีครับ!</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">10</span>ธาตุ Mg มี 3 ไอโซโทป: ²⁴Mg = 79.0%, ²⁵Mg และ ²⁶Mg = 10.0% จงหามวลอะตอมเฉลี่ย (กำหนดให้ ²⁵Mg มีปริมาณ 11%)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">%²⁶Mg = 100 − 79 − 11 = 10%</div>
+    <div class="step">$\bar{M} = \dfrac{(24 \times 79) + (25 \times 11) + (26 \times 10)}{100}$</div>
+    <div class="step">$= \dfrac{1896 + 275 + 260}{100} = \dfrac{2431}{100}$</div>
+    <div class="step"><span class="highlight">= 24.31 amu</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">12</span>ทองแดง ⁶³Cu กับ ⁶⁵Cu (มวลอะตอม 63 และ 65) มวลอะตอมเฉลี่ย = 63.546 จงหา % ของแต่ละไอโซโทป</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">สมมติ %⁶³Cu = x% → %⁶⁵Cu = (100−x)%</div>
+    <div class="step">$\dfrac{63x + 65(100-x)}{100} = 63.546$</div>
+    <div class="step">$63x + 6500 - 65x = 6354.6$</div>
+    <div class="step">$-2x = 6354.6 - 6500 = -145.4$</div>
+    <div class="step">$x = 72.7$</div>
+    <div class="step"><span class="highlight">⁶³Cu = 72.7% และ ⁶⁵Cu = 27.3%</span></div>
+  </div>
+  <div class="fun-fact">🪙 <strong>เหรียญบาทไทยทำจากอะไร?</strong> เหรียญบาทส่วนใหญ่ทำจาก Nickel-plated Steel หรือ Stainless Steel — ไม่ได้ทำจากเงิน (Ag) แล้วนะครับในยุคนี้ แต่เงินในภาษาไทยยังเรียกรวมว่า "เงิน" อยู่!</div>
+</div>
+
+<!-- ===== มวลโมเลกุล ===== -->
+<div class="section-title">ส่วนที่ 3 — มวลโมเลกุล (Molecular Weight)</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>วิธีคำนวณมวลโมเลกุล</div>
+  <div class="formula-box">
+    <p><strong>MW</strong> = ผลรวมของ (มวลอะตอม × จำนวนอะตอม) ของทุกธาตุในสูตร</p>
+    <p>ตัวอย่าง: H₂SO₄ = (2×1) + (1×32) + (4×16) = 2 + 32 + 64 = <strong>98 amu</strong></p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">16</span>กรดซัลฟิวริก 5 โมเลกุลมีมวล $490 \times 1.66 \times 10^{-24}$ กรัม จงหามวลโมเลกุล</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">มวล 1 โมเลกุล = $\dfrac{490 \times 1.66 \times 10^{-24}}{5} = 98 \times 1.66 \times 10^{-24}$ g</div>
+    <div class="step">มวลโมเลกุล = $\dfrac{98 \times 1.66 \times 10^{-24}}{1.66 \times 10^{-24}}$</div>
+    <div class="step"><span class="highlight">= 98 amu → H₂SO₄ (กรดซัลฟิวริก)</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">17</span>กรดซัลฟิวริก H₂SO₄ จำนวน 2 โมเลกุล หนักกี่กรัม</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">MW H₂SO₄ = (2×1) + 32 + (4×16) = 98 amu</div>
+    <div class="step">มวล 2 โมเลกุล = $2 \times 98 \times 1.66 \times 10^{-24}$</div>
+    <div class="step"><span class="highlight">= $3.2536 \times 10^{-22}$ กรัม</span></div>
+  </div>
+  <div class="fun-fact">⚠️ <strong>H₂SO₄ อันตราย!</strong> กรดซัลฟิวริกเข้มข้น (conc. H₂SO₄) ดูดความชื้นรุนแรงมาก เมื่อถูกผิวหนังจะก่อให้เกิดแผลไหม้รุนแรง นักเคมีจึงต้องระวังมากเป็นพิเศษ — "เติมกรดลงน้ำเสมอ ไม่ใช่เติมน้ำลงกรด" เป็นกฎทองของห้องแล็บ!</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">18</span>สาร KXO₄ มีมวลโมเลกุล = 156 จงหามวลอะตอมของ X (K=39, O=16)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">39 + X + (4×16) = 156</div>
+    <div class="step">39 + X + 64 = 156</div>
+    <div class="step">X = 156 − 39 − 64 = <span class="highlight">53 amu (คือ Iodine, I)</span></div>
+    <div class="step">→ สาร KIO₄ คือ Potassium periodate</div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">19</span>สาร K₂XO₄ มีมวลสูตร = 245 จงหามวลอะตอม X (K=39, O=16)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">(2×39) + X + (4×16) = 245</div>
+    <div class="step">78 + X + 64 = 245</div>
+    <div class="step">X = 245 − 78 − 64 = <span class="highlight">103 amu (คือ Rhodium, Rh)</span></div>
+  </div>
+</div>
+
+</body>
+</html>

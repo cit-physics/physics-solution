@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เฉลย บทที่ 3 โมล และการดุลสมการ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sarabun', sans-serif; background: #f0f4f0; color: #1a1a2e; font-size: 15px; line-height: 1.7; padding: 24px 20px 48px; }
+
+.chapter-header {
+  background: linear-gradient(135deg, #1a5c2a 0%, #2e8b57 100%);
+  color: #fff; border-radius: 14px; padding: 22px 28px; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+}
+.chapter-header .icon { font-size: 2.2rem; }
+.chapter-header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+.chapter-header p { font-size: 0.9rem; opacity: 0.85; }
+
+.section-title {
+  font-size: 1.05rem; font-weight: 700; color: #1a5c2a;
+  border-left: 4px solid #2e8b57; padding-left: 12px;
+  margin: 28px 0 14px;
+}
+
+.q-block {
+  background: #fff; border-radius: 12px; padding: 18px 20px;
+  margin-bottom: 16px; border: 1px solid #d4e8d4;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.q-num {
+  display: inline-block; background: #1a5c2a; color: #fff;
+  width: 28px; height: 28px; border-radius: 50%;
+  text-align: center; line-height: 28px; font-size: 0.82rem;
+  font-weight: 700; margin-right: 8px;
+}
+.q-text { font-weight: 600; color: #2a4a2a; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 4px; }
+.answer-box {
+  background: #f0faf0; border: 1px solid #a8d5a8; border-radius: 8px;
+  padding: 14px 16px; margin-top: 8px;
+}
+.answer-label { font-size: 0.78rem; font-weight: 700; color: #2e8b57; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+
+.table-wrapper { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th { background: #1a5c2a; color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
+td { padding: 7px 12px; border-bottom: 1px solid #d4e8d4; }
+tr:nth-child(even) td { background: #f5fbf5; }
+
+.fun-fact {
+  background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+  border: 1px solid #f9d835; border-radius: 8px;
+  padding: 10px 14px; margin-top: 12px; font-size: 0.88rem; color: #5a4a00;
+}
+.highlight { background: #e8f5e9; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+.formula { font-family: monospace; font-weight: 700; font-size: 1rem; color: #1a5c2a; }
+
+.formula-box {
+  background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 12px 16px; margin: 10px 0;
+}
+.step { background: #fff; border-left: 3px solid #2e8b57; padding: 6px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; }
+
+.mole-card {
+  background: #f0faf0; border: 1px solid #c8e6c9; border-radius: 10px; padding: 14px 16px; margin: 8px 0;
+}
+.mole-card .relation { font-size: 1.05rem; font-weight: 700; color: #1a5c2a; }
+
+.equation-box {
+  background: #1a2e1a; color: #a8d5a8; font-family: monospace;
+  border-radius: 8px; padding: 12px 16px; margin: 8px 0; font-size: 1rem;
+}
+</style>
+</head>
+<body>
+
+<div class="chapter-header">
+  <span class="icon">🧮</span>
+  <div>
+    <h1>บทที่ 3 (ตอนที่ 2) — โมล & การดุลสมการ</h1>
+    <p>Mole Concept & Balancing Equations | เฉลยข้อ 20–45</p>
+  </div>
+</div>
+
+<!-- ===== โมล ===== -->
+<div class="section-title">ส่วนที่ 1 — แนวคิดโมล (Mole)</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สูตรโมลทั้งหมด (ต้องท่องจำ!)</div>
+  <div class="formula-box">
+    $$n = \frac{g}{MW} = \frac{N}{6.022 \times 10^{23}} = \frac{V \text{(STP)}}{22.4}$$
+    <p>• <strong>n</strong> = จำนวนโมล (mol)</p>
+    <p>• <strong>g</strong> = มวล (กรัม)</p>
+    <p>• <strong>MW</strong> = มวลโมลาร์ (g/mol)</p>
+    <p>• <strong>N</strong> = จำนวนอนุภาค (อะตอม/โมเลกุล)</p>
+    <p>• <strong>$N_A$</strong> = $6.022 \times 10^{23}$ (เลขอาโวกาโดร)</p>
+    <p>• <strong>V(STP)</strong> = ปริมาตร (ลิตร) ที่ STP (0°C, 1 atm) → แก๊ส 1 mol = 22.4 L</p>
+  </div>
+  <div class="fun-fact">🥑 <strong>เลขอาโวกาโดร vs อาโวคาโด!</strong> $6.022 \times 10^{23}$ ตั้งชื่อตามนักวิทยาศาสตร์ Amedeo Avogadro — ไม่ใช่ผลไม้ 😄 ตัวเลขนี้ใหญ่แค่ไหน? ถ้ามีโมลของเม็ดทรายจะปิดพื้นผิวโลกได้หนา 9 กิโลเมตร!</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>สรุปปริมาณสาร 1 โมล NH₃</div>
+  <div class="mole-card">
+    <div class="relation">NH₃ จำนวน 1 โมล (n = 1):</div>
+    <p>• จำนวนโมเลกุล = $6.022 \times 10^{23}$ โมเลกุล</p>
+    <p>• จำนวนอะตอม N = $1 \times 6.022 \times 10^{23}$ อะตอม</p>
+    <p>• จำนวนอะตอม H = $3 \times 6.022 \times 10^{23}$ อะตอม</p>
+    <p>• จำนวนอะตอมรวม = $4 \times 6.022 \times 10^{23}$ อะตอม</p>
+    <p>• มวล N = 14 กรัม, มวล H = 3 กรัม, มวลรวม = 17 กรัม</p>
+    <p>• ปริมาตรที่ STP = 22.4 ลิตร</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">22</span>คาเฟอีน C₈H₁₀N₄O₂ จำนวน 0.5 โมล</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">MW คาเฟอีน = (8×12) + (10×1) + (4×14) + (2×16) = 96 + 10 + 56 + 32 = 194 g/mol</div>
+    <div class="step">1) จำนวนโมเลกุล = $0.5 \times 6.022 \times 10^{23}$ = <span class="highlight">$3.011 \times 10^{23}$ โมเลกุล</span></div>
+    <div class="step">2) โมลอะตอม C = $0.5 \times 8$ = 4 mol, H = $0.5 \times 10$ = 5 mol, N = $0.5 \times 4$ = 2 mol, O = $0.5 \times 2$ = 1 mol</div>
+    <div class="step">3) โมลอะตอมทั้งหมด = $0.5 \times (8+10+4+2)$ = $0.5 \times 24$ = <span class="highlight">12 mol</span></div>
+    <div class="step">4) อะตอมรวม = $12 \times 6.022 \times 10^{23}$ = <span class="highlight">$7.226 \times 10^{24}$ อะตอม</span></div>
+    <div class="step">5) อะตอม H = $5 \times 6.022 \times 10^{23}$ = <span class="highlight">$3.011 \times 10^{24}$ อะตอม</span></div>
+  </div>
+  <div class="fun-fact">☕ <strong>คาเฟอีนในชีวิตจริง!</strong> กาแฟ 1 ถ้วย (240 ml) มีคาเฟอีนประมาณ 95 mg = 0.00049 mol = $2.94 \times 10^{20}$ โมเลกุล นั่นคือหลายร้อยล้านล้านล้านโมเลกุลที่ทำให้ตื่น! ⚡</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">23</span>K₂O 6000 โมเลกุล มีธาตุ K และ O กี่อะตอม</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">K₂O = K 2 อะตอม + O 1 อะตอม ต่อ 1 โมเลกุล</div>
+    <div class="step">อะตอม K = $6000 \times 2$ = <span class="highlight">12,000 อะตอม</span></div>
+    <div class="step">อะตอม O = $6000 \times 1$ = <span class="highlight">6,000 อะตอม</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">24</span>มีเทน CH₄ มีจำนวน H จำนวน 2800 อะตอม มาจากมีเทนกี่โมเลกุล</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">CH₄ = H 4 อะตอม ต่อ 1 โมเลกุล</div>
+    <div class="step">จำนวนมีเทน = $\dfrac{2800}{4}$ = <span class="highlight">700 โมเลกุล</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">25</span>กลูโคส C₆H₁₂O₆ จำนวน $12.04 \times 10^{23}$ โมเลกุล จะมีอะตอม H กี่อะตอม</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">กลูโคส 1 โมเลกุล มี H 12 อะตอม</div>
+    <div class="step">อะตอม H = $12 \times 12.04 \times 10^{23}$ = <span class="highlight">$1.4448 \times 10^{25}$ อะตอม</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">26</span>กลูโคสจำนวน $12.04 \times 10^{23}$ โมเลกุล คิดเป็นกี่โมล</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">$n = \dfrac{12.04 \times 10^{23}}{6.022 \times 10^{23}}$ = <span class="highlight">2 โมล</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">29</span>น้ำกลั่น 1800 กรัม คิดเป็นกี่โมล (H₂O = 18 g/mol)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">$n = \dfrac{g}{MW} = \dfrac{1800}{18}$ = <span class="highlight">100 โมล</span></div>
+  </div>
+  <div class="fun-fact">💧 <strong>น้ำ 1 แก้ว = กี่โมล?</strong> แก้วน้ำ 250 ml ≈ 250 g → n = 250/18 ≈ 13.9 โมล = $8.36 \times 10^{24}$ โมเลกุล — ดื่มน้ำทีหนึ่งได้กลืนโมเลกุล H₂O เข้าไปเกือบ 10 ล้านล้านล้านโมเลกุล! 🤯</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">34</span>ยาลดกรด Magnesium hydroxide 0.04 โมล คิดเป็นกี่กรัม (Mg=24, O=16, H=1)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">MW Mg(OH)₂ = 24 + 2×(16+1) = 24 + 34 = 58 g/mol</div>
+    <div class="step">g = n × MW = $0.04 \times 58$ = <span class="highlight">2.32 กรัม</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">35</span>แก๊ส X 0.224 ลิตรที่ STP มีจำนวนโมลเท่าใด</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">$n = \dfrac{V}{22.4} = \dfrac{0.224}{22.4}$ = <span class="highlight">0.01 โมล</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">37</span>ก๊าซ CO 30 โมล คิดเป็นกี่ลูกบาศก์เซนติเมตรที่ STP</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">V = n × 22.4 = 30 × 22.4 = 672 ลิตร</div>
+    <div class="step">= 672 × 1000 ลูกบาศก์เซนติเมตร = <span class="highlight">672,000 cm³</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">38</span>แก๊ส CO₂ 88 กรัม มีกี่โมเลกุล (C=12, O=16)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">MW CO₂ = 12 + (2×16) = 44 g/mol</div>
+    <div class="step">n = 88/44 = 2 mol</div>
+    <div class="step">จำนวนโมเลกุล = $2 \times 6.022 \times 10^{23}$ = <span class="highlight">$1.204 \times 10^{24}$ โมเลกุล</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">40</span>แก๊สแอมโมเนีย NH₃ 34 กรัม คิดเป็นกี่โมเลกุล (N=14, H=1)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">MW NH₃ = 14 + (3×1) = 17 g/mol</div>
+    <div class="step">n = 34/17 = 2 mol</div>
+    <div class="step">จำนวนโมเลกุล = $2 \times 6.022 \times 10^{23}$ = <span class="highlight">$1.204 \times 10^{24}$ โมเลกุล</span></div>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">41</span>NH₃ รั่วไหล 0.034 g จงหา: 1) ปริมาตร 2) จำนวนโมเลกุล 3) จำนวนอะตอม N และ H</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="step">n = 0.034/17 = 0.002 mol</div>
+    <div class="step">1) V = $0.002 \times 22.4$ = <span class="highlight">0.0448 ลิตร (44.8 ml)</span></div>
+    <div class="step">2) โมเลกุล = $0.002 \times 6.022 \times 10^{23}$ = <span class="highlight">$1.204 \times 10^{21}$ โมเลกุล</span></div>
+    <div class="step">3) อะตอม N = $0.002 \times 6.022 \times 10^{23} \times 1$ = $1.204 \times 10^{21}$</div>
+    <div class="step">   อะตอม H = $0.002 \times 6.022 \times 10^{23} \times 3$ = <span class="highlight">$3.613 \times 10^{21}$ อะตอม</span></div>
+  </div>
+  <div class="fun-fact">🧊 <strong>NH₃ เป็นสารทำความเย็น!</strong> แอมโมเนียถูกใช้เป็นสารทำความเย็นในอุตสาหกรรมมาก่อนที่จะมีแฟรีออน (Freon) และกำลังกลับมาได้รับความนิยมอีกครั้งเพราะเป็นมิตรกับสิ่งแวดล้อมกว่า แต่มีกลิ่นฉุนมากๆ และเป็นพิษครับ!</div>
+</div>
+
+<!-- ===== การดุลสมการ ===== -->
+<div class="section-title">ส่วนที่ 2 — การดุลสมการเคมี</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>หลักการดุลสมการ</div>
+  <div class="formula-box">
+    <p>• จำนวนอะตอมแต่ละธาตุด้านซ้าย = ด้านขวา (กฎอนุรักษ์มวล)</p>
+    <p>• ดุลโดยการเติมสัมประสิทธิ์ (ตัวเลขหน้าสูตร) ห้ามเปลี่ยนสูตรเคมี</p>
+    <p><strong>วิธีดุล:</strong> เริ่มจากธาตุที่ซับซ้อนที่สุดก่อน → ดุล H และ O เป็นลำดับสุดท้าย</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">1</span>Fe₂O₃ + H₂ → Fe + H₂O</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="equation-box">Fe₂O₃ + 3H₂ → 2Fe + 3H₂O</div>
+    <p style="font-size:0.88rem;color:#555;margin-top:6px;">ตรวจสอบ: Fe 2=2 ✓, O 3=3 ✓, H 6=6 ✓</p>
+  </div>
+  <div class="fun-fact">🔨 <strong>นี่คือการถลุงเหล็ก!</strong> การรีดิวซ์ Fe₂O₃ ด้วย H₂ (หรือ CO) เป็นหัวใจของอุตสาหกรรมเหล็กกล้า ทุกตึก ทุกรถ ทุกสะพาน ล้วนเริ่มต้นจากปฏิกิริยานี้ครับ!</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">2</span>C₂H₄ + O₂ → CO₂ + H₂O</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="equation-box">C₂H₄ + 3O₂ → 2CO₂ + 2H₂O</div>
+    <p style="font-size:0.88rem;color:#555;margin-top:6px;">ตรวจสอบ: C 2=2 ✓, H 4=4 ✓, O 6=6+2=6 ✓</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">3</span>K₂CO₃ + HNO₃ → KNO₃ + H₂O + CO₂</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="equation-box">K₂CO₃ + 2HNO₃ → 2KNO₃ + H₂O + CO₂</div>
+    <p style="font-size:0.88rem;color:#555;margin-top:6px;">ตรวจสอบ: K 2=2 ✓, N 2=2 ✓, H 2=2 ✓, C 1=1 ✓, O 9=6+1+2=9 ✓</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">4</span>Fe₂(SO₄)₃ + KOH → K₂SO₄ + Fe(OH)₃</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="equation-box">Fe₂(SO₄)₃ + 6KOH → 3K₂SO₄ + 2Fe(OH)₃</div>
+    <p style="font-size:0.88rem;color:#555;margin-top:6px;">ตรวจสอบ: Fe 2=2 ✓, S 3=3 ✓, K 6=6 ✓, O 12+6=12+6=18 ✓, H 6=6 ✓</p>
+  </div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">5</span>Mg(OH)₂ + HCl → MgCl₂ + H₂O</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย</div>
+    <div class="equation-box">Mg(OH)₂ + 2HCl → MgCl₂ + 2H₂O</div>
+    <p style="font-size:0.88rem;color:#555;margin-top:6px;">ตรวจสอบ: Mg 1=1 ✓, Cl 2=2 ✓, H 4=4 ✓, O 2=2 ✓</p>
+  </div>
+  <div class="fun-fact">💊 <strong>ยาลดกรดเกิดขึ้นได้อย่างไร?</strong> Mg(OH)₂ + 2HCl → MgCl₂ + 2H₂O — OH⁻ จาก Mg(OH)₂ ไปสะเทิน H⁺ จากกรดในกระเพาะ ทำให้ pH สูงขึ้น บรรเทาอาการแสบร้อน นี่คือเคมีที่ช่วยชีวิตได้จริงๆ ครับ!</div>
+</div>
+
+<div class="q-block">
+  <div class="q-text"><span class="q-num">★</span>โจทย์ก๊าซฟอสจีน (ข้อ 45)</div>
+  <div class="answer-box">
+    <div class="answer-label">✦ เฉลย: COCl₂ ที่ STP, V = 4.48 dm³</div>
+    <div class="step">MW COCl₂ = 12 + 16 + (2×35.5) = 99 g/mol</div>
+    <div class="step">1) n = V/22.4 = 4.48/22.4 = <span class="highlight">0.2 mol</span></div>
+    <div class="step">2) มวล = n × MW = 0.2 × 99 = <span class="highlight">19.8 กรัม</span></div>
+    <div class="step">3) จำนวนโมเลกุล = $0.2 \times 6.022 \times 10^{23}$ = <span class="highlight">$1.204 \times 10^{23}$ โมเลกุล</span></div>
+  </div>
+  <div class="fun-fact">☠️ <strong>ระวัง! ก๊าซพิษสงคราม</strong> Phosgene (COCl₂) ถูกใช้เป็นอาวุธเคมีในสงครามโลกครั้งที่ 1 ทำให้เสียชีวิตมากกว่าก๊าซคลอรีน ปัจจุบันใช้ในอุตสาหกรรมพลาสติกและยา แต่มีการควบคุมอย่างเข้มงวดมากครับ</div>
+</div>
+
+</body>
+</html>
