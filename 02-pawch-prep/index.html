@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เฉลยฟิสิกส์ — ปรับพื้นฐาน ปวช (รวมทุกบท)</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Sarabun', sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; background: #f0f4f8; color: #1a1a2e; }
+
+/* ── Top bar ── */
+.topbar {
+  background: linear-gradient(135deg, #1a3a5c 0%, #1a6ca8 100%);
+  color: #fff;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+.topbar-icon { font-size: 1.5rem; }
+.topbar-title { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.02em; }
+.topbar-sub { font-size: 0.85rem; opacity: 0.75; margin-left: 6px; }
+.topbar-back {
+  margin-left: auto; background: rgba(255,255,255,0.15);
+  border: none; color: #fff; padding: 6px 14px; border-radius: 20px;
+  cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 0.85rem;
+  text-decoration: none; display: inline-block;
+  transition: background 0.2s;
+}
+.topbar-back:hover { background: rgba(255,255,255,0.25); }
+.topbar-toggle {
+  background: rgba(255,255,255,0.15);
+  border: none; color: #fff; padding: 6px 14px; border-radius: 20px;
+  cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 0.85rem;
+  transition: background 0.2s;
+}
+.topbar-toggle:hover { background: rgba(255,255,255,0.25); }
+
+/* ── Layout ── */
+.layout { display: flex; flex: 1; overflow: hidden; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 260px; min-width: 260px;
+  background: #1a2744;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: width 0.3s, min-width 0.3s;
+  flex-shrink: 0;
+}
+.sidebar.collapsed { width: 0; min-width: 0; }
+.sidebar-header {
+  padding: 16px 20px 10px;
+  color: #7ec8e3; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0;
+}
+.nav-list { list-style: none; overflow-y: auto; flex: 1; padding-bottom: 16px; }
+.nav-list::-webkit-scrollbar { width: 4px; }
+.nav-list::-webkit-scrollbar-thumb { background: #2a3d6e; border-radius: 2px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 20px; cursor: pointer;
+  color: #aac4e0; font-size: 0.93rem;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap; overflow: hidden;
+}
+.nav-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.nav-item.active { background: rgba(126,200,227,0.12); border-left-color: #7ec8e3; color: #7ec8e3; font-weight: 700; }
+.nav-num {
+  background: rgba(255,255,255,0.1); color: #7ec8e3;
+  width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700;
+}
+.nav-item.active .nav-num { background: #7ec8e3; color: #1a2744; }
+.nav-label { overflow: hidden; text-overflow: ellipsis; }
+
+/* ── Content ── */
+.content { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+.iframe-wrap { flex: 1; overflow: hidden; }
+.iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* ── Splash ── */
+.splash {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 40px 24px; gap: 18px;
+}
+.splash-icon { font-size: 4rem; }
+.splash h2 { font-size: 1.6rem; color: #1a3a5c; }
+.splash p { color: #666; font-size: 1.0rem; max-width: 420px; line-height: 1.8; }
+.chapter-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; width: 100%; max-width: 720px; margin-top: 10px;
+}
+.chapter-btn {
+  background: #fff; border: 2px solid #d0e4f5; border-radius: 12px;
+  padding: 14px 16px; cursor: pointer; text-align: left;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  font-family: 'Sarabun', sans-serif;
+}
+.chapter-btn:hover { border-color: #1a6ca8; box-shadow: 0 4px 16px rgba(26,108,168,0.15); transform: translateY(-2px); }
+.chapter-btn .num { font-size: 0.78rem; color: #1a6ca8; font-weight: 700; margin-bottom: 4px; }
+.chapter-btn .name { font-size: 0.93rem; color: #1a1a2e; font-weight: 600; line-height: 1.4; }
+.chapter-btn.review { border-color: #d4a017; }
+.chapter-btn.review .num { color: #b87400; }
+.chapter-btn.review:hover { border-color: #b87400; box-shadow: 0 4px 16px rgba(184,116,0,0.18); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-icon">⚡</span>
+  <span class="topbar-title">ปรับพื้นฐาน ปวช</span>
+  <span class="topbar-sub">เฉลยวิชาฟิสิกส์</span>
+  <a class="topbar-back" href="../index.html">← หน้าหลัก</a>
+  <button class="topbar-toggle" onclick="toggleSidebar()">☰ บทเรียน</button>
+</div>
+
+<div class="layout">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">บทเรียน</div>
+    <ul class="nav-list" id="navList">
+      <li class="nav-item" onclick="loadChapter('ch01-units.html', this)">
+        <span class="nav-num">1</span>
+        <span class="nav-label">หน่วยและการวัด</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch02-math-basics.html', this)">
+        <span class="nav-num">2</span>
+        <span class="nav-label">คณิตพื้นฐาน</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch03-vectors.html', this)">
+        <span class="nav-num">3</span>
+        <span class="nav-label">เวกเตอร์</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch04-motion-basics.html', this)">
+        <span class="nav-num">4</span>
+        <span class="nav-label">การเคลื่อนที่เบื้องต้น</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch05-motion-graphs.html', this)">
+        <span class="nav-num">5</span>
+        <span class="nav-label">กราฟการเคลื่อนที่</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch06-kinematics.html', this)">
+        <span class="nav-num">6</span>
+        <span class="nav-label">จลนศาสตร์</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch07-free-fall.html', this)">
+        <span class="nav-num">7</span>
+        <span class="nav-label">การตกในแนวดิ่ง</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch08-newton-laws.html', this)">
+        <span class="nav-num">8</span>
+        <span class="nav-label">กฎของนิวตัน</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch09-newton-applied.html', this)">
+        <span class="nav-num">9</span>
+        <span class="nav-label">กฎนิวตันประยุกต์</span>
+      </li>
+      <li class="nav-item" onclick="loadChapter('ch10-equilibrium.html', this)">
+        <span class="nav-num">10</span>
+        <span class="nav-label">สมดุลกล</span>
+      </li>
+      <li class="nav-item" style="border-top:1px solid #2a3d6e;margin-top:8px;padding-top:18px;"
+          onclick="loadChapter('ch-review.html', this)">
+        <span class="nav-num" style="background:rgba(240,165,0,0.2);color:#f0a500;">★</span>
+        <span class="nav-label" style="color:#f0c040;">แบบฝึกหัดทบทวน</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content" id="content">
+    <div class="splash" id="splash">
+      <div class="splash-icon">⚡</div>
+      <h2>เฉลย ปรับพื้นฐาน ปวช</h2>
+      <p>เลือกบทเรียนจากเมนูซ้าย หรือกดที่บทด้านล่างได้เลยครับ</p>
+      <div class="chapter-grid">
+        <div class="chapter-btn" onclick="loadChapter('ch01-units.html', null)">
+          <div class="num">ครั้งที่ 1</div>
+          <div class="name">หน่วยและการวัด</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch02-math-basics.html', null)">
+          <div class="num">ครั้งที่ 2</div>
+          <div class="name">คณิตพื้นฐาน</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch03-vectors.html', null)">
+          <div class="num">ครั้งที่ 3</div>
+          <div class="name">เวกเตอร์</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch04-motion-basics.html', null)">
+          <div class="num">ครั้งที่ 4</div>
+          <div class="name">การเคลื่อนที่เบื้องต้น</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch05-motion-graphs.html', null)">
+          <div class="num">ครั้งที่ 5</div>
+          <div class="name">กราฟการเคลื่อนที่</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch06-kinematics.html', null)">
+          <div class="num">ครั้งที่ 6</div>
+          <div class="name">จลนศาสตร์</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch07-free-fall.html', null)">
+          <div class="num">ครั้งที่ 7</div>
+          <div class="name">การตกในแนวดิ่ง</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch08-newton-laws.html', null)">
+          <div class="num">ครั้งที่ 8</div>
+          <div class="name">กฎของนิวตัน</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch09-newton-applied.html', null)">
+          <div class="num">ครั้งที่ 9</div>
+          <div class="name">กฎนิวตันประยุกต์</div>
+        </div>
+        <div class="chapter-btn" onclick="loadChapter('ch10-equilibrium.html', null)">
+          <div class="num">ครั้งที่ 10</div>
+          <div class="name">สมดุลกล</div>
+        </div>
+        <div class="chapter-btn review" onclick="loadChapter('ch-review.html', null)" style="grid-column:1/-1;">
+          <div class="num">★ ทบทวน</div>
+          <div class="name">แบบฝึกหัดทบทวน — รวมทุกบท</div>
+        </div>
+      </div>
+    </div>
+    <div class="iframe-wrap" id="iframeWrap" style="display:none;">
+      <iframe id="chapterFrame" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+let sidebarOpen = true;
+
+function toggleSidebar() {
+  sidebarOpen = !sidebarOpen;
+  document.getElementById('sidebar').classList.toggle('collapsed', !sidebarOpen);
+}
+
+function loadChapter(file, navEl) {
+  document.getElementById('splash').style.display = 'none';
+  document.getElementById('iframeWrap').style.display = 'flex';
+  document.getElementById('chapterFrame').src = file;
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  if (navEl) navEl.classList.add('active');
+  else {
+    document.querySelectorAll('.nav-item').forEach(n => {
+      if (n.getAttribute('onclick') && n.getAttribute('onclick').includes(file))
+        n.classList.add('active');
+    });
+  }
+}
+</script>
+</body>
+</html>
