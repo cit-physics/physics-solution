@@ -91,6 +91,20 @@ tr:nth-child(even) td { background: #f5fbf5; }
   border-radius: 8px; padding: 10px 14px; margin: 10px 0;
   font-size: 0.95rem;
 }
+
+/* ── TTS Button ── */
+.tts-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #1a5c2a; color: #fff; border: none;
+  padding: 7px 16px; border-radius: 20px; cursor: pointer;
+  font-family: 'Sarabun', sans-serif; font-size: 0.85rem;
+  font-weight: 600; margin-top: 12px; transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+.tts-btn:hover { background: #2e8b57; transform: translateY(-1px); }
+.tts-btn.speaking { background: #c0392b; }
+.tts-btn.speaking:hover { background: #e74c3c; }
+
 </style>
 </head>
 <body>
@@ -376,6 +390,86 @@ tr:nth-child(even) td { background: #f5fbf5; }
     </div>
   </div>
 </div>
+
+
+<script>
+(function() {
+  var CH = 'ch02';
+  var currentAudios = [];
+  var currentBtn   = null;
+  var isPlaying    = false;
+
+  function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function stopAll() {
+    isPlaying = false;
+    currentAudios.forEach(function(a) {
+      try { a.pause(); a.currentTime = 0; a.src = ''; } catch(e) {}
+    });
+    currentAudios = [];
+    if (currentBtn) {
+      currentBtn.innerHTML = '\uD83D\uDD0A \u0e1f\u0e31\u0e07\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22';
+      currentBtn.classList.remove('speaking');
+      currentBtn = null;
+    }
+  }
+
+  function playChain(baseKey, partIdx, btn, onDone) {
+    if (!isPlaying) { if (onDone) onDone(); return; }
+    var src = 'voice/' + baseKey + '_' + pad2(partIdx) + '.mp3';
+    var a = new Audio(src);
+    currentAudios.push(a);
+    a.onerror = function() {
+      if (partIdx === 0) {
+        if (currentBtn === btn) {
+          btn.innerHTML = '\u26A0\uFE0F \u0e44\u0e21\u0e48\u0e1e\u0e1a\u0e44\u0e1f\u0e25\u0e4c\u0e40\u0e2a\u0e35\u0e22\u0e07';
+          setTimeout(function() {
+            if (currentBtn === btn) {
+              btn.innerHTML = '\uD83D\uDD0A \u0e1f\u0e31\u0e07\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22';
+              btn.classList.remove('speaking');
+              currentBtn = null; isPlaying = false;
+            }
+          }, 2000);
+        }
+      } else { if (onDone) onDone(); }
+    };
+    a.onended = function() { playChain(baseKey, partIdx + 1, btn, onDone); };
+    a.play().catch(function() { if (onDone) onDone(); });
+  }
+
+  function speakBlock(btn, idx) {
+    var wasSame = (currentBtn === btn && isPlaying);
+    stopAll();
+    if (wasSame) return;
+    var baseKey = CH + '_q' + pad2(idx);
+    isPlaying = true; currentBtn = btn;
+    btn.innerHTML = '\u23F9 \u0e2b\u0e22\u0e38\u0e14\u0e40\u0e2a\u0e35\u0e22\u0e07';
+    btn.classList.add('speaking');
+    playChain(baseKey, 0, btn, function() {
+      if (currentBtn === btn) {
+        btn.innerHTML = '\uD83D\uDD0A \u0e1f\u0e31\u0e07\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22';
+        btn.classList.remove('speaking');
+        currentBtn = null; isPlaying = false;
+      }
+    });
+  }
+
+  function addTTSButtons() {
+    document.querySelectorAll('.q-block').forEach(function(block, idx) {
+      if (block.querySelector('.tts-btn')) return;
+      var btn = document.createElement('button');
+      btn.className = 'tts-btn';
+      btn.innerHTML = '\uD83D\uDD0A \u0e1f\u0e31\u0e07\u0e04\u0e33\u0e2d\u0e18\u0e34\u0e1a\u0e32\u0e22';
+      (function(b, i) { b.addEventListener('click', function() { speakBlock(b, i); }); })(btn, idx);
+      block.appendChild(btn);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addTTSButtons);
+  } else { addTTSButtons(); }
+})();
+</script>
 
 </body>
 </html>
